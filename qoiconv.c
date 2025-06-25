@@ -43,13 +43,13 @@ int main(int argc, char **argv) {
 	void *pixels = NULL;
 	int w, h, channels;
 	if (STR_ENDS_WITH(argv[1], ".png")) {
-		if(!stbi_info(argv[1], &w, &h, &channels)) {
+		if (!stbi_info(argv[1], &w, &h, &channels)) {
 			printf("Couldn't read header %s\n", argv[1]);
 			exit(1);
 		}
 
 		// Force all odd encodings to be RGBA
-		if(channels != 3) {
+		if (channels != 3) {
 			channels = 4;
 		}
 
